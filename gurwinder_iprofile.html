@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gurwinder Kaur | Product Manager</title>
+<style>
+:root{--ink:#262626;--muted:#737373;--line:#dbdbdb;--paper:#fff;--bg:#fafafa;--pink:#d62976;--purple:#962fbf;--orange:#feda75;--blue:#0095f6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.shell{max-width:1000px;margin:0 auto;min-height:100vh;background:var(--paper);border-left:1px solid #eee;border-right:1px solid #eee}
+.topbar{height:66px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);z-index:5}
+.brand{font-family:Georgia,serif;font-size:27px;letter-spacing:-1.2px;font-weight:bold}
+.brand span{background:linear-gradient(45deg,var(--orange),var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.toplinks{display:flex;gap:18px;align-items:center}
+.icon{width:23px;height:23px;display:inline-flex;align-items:center;justify-content:center;font-size:21px}
+.contact-btn{border:0;background:var(--blue);color:#fff;border-radius:8px;padding:9px 15px;font-weight:650;font-size:13px}
+main{padding:38px 6.5% 45px}
+.profile{display:grid;grid-template-columns: minmax(130px, 1fr) 2.2fr;gap:35px;align-items:center;margin-bottom:35px}
+.avatar-wrap{display:flex;justify-content:center}
+.avatar-ring{width:150px;height:150px;border-radius:50%;padding:5px;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)}
+.avatar{height:100%;width:100%;border-radius:50%;border:4px solid white;background:linear-gradient(145deg,#f4e7ff,#dce8ff);display:flex;align-items:center;justify-content:center;color:#6d3c83;font-size:42px;font-weight:700;letter-spacing:-3px}
+.profile-head{display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:18px}
+.username{font-size:23px;font-weight:350}
+.badge{font-size:11px;font-weight:700;color:#7b3d91;background:#f5eafa;border-radius:20px;padding:6px 9px}
+.profile-actions{display:flex;gap:8px}
+.btn{border:1px solid var(--line);background:#efefef;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:650;cursor:pointer}
+.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.stats{display:flex;gap:32px;margin-bottom:17px;font-size:14px}
+.stats strong{font-weight:700}
+.bio{font-size:14px;line-height:1.55}
+.bio .name{font-weight:700}
+.bio .role{font-weight:650}
+.bio p{margin:3px 0}
+.bio .muted{color:var(--muted)}
+.link{color:#00376b;font-weight:650}
+.highlights{display:flex;gap:28px;overflow-x:auto;padding:4px 0 27px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.highlight{min-width:82px;text-align:center;font-size:12px;font-weight:600}
+.highlight-circle{width:75px;height:75px;border:1px solid #ddd;border-radius:50%;padding:4px;margin:0 auto 9px;background:#fff}
+.highlight-inner{height:100%;border-radius:50%;background:#f6f0fa;display:flex;align-items:center;justify-content:center;font-size:25px;color:#8244a0}
+.tabs{display:flex;justify-content:center;gap:60px;border-bottom:1px solid var(--line);margin-bottom:0}
+.tab{padding:15px 0 13px;display:flex;gap:7px;align-items:center;text-transform:uppercase;letter-spacing:1.2px;font-size:11px;color:var(--muted);font-weight:700}
+.tab.active{color:var(--ink);border-top:1px solid var(--ink);margin-top:-1px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding-top:4px}
+.tile{min-height:220px;aspect-ratio:1/1;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:20px;color:#fff;background:#d9d0e7}
+.tile:nth-child(1){background:linear-gradient(145deg,#2d2440,#8c5ca8)}
+.tile:nth-child(2){background:linear-gradient(145deg,#0c5b65,#60b8ac)}
+.tile:nth-child(3){background:linear-gradient(145deg,#f4a261,#8e4568)}
+.tile:nth-child(4){background:linear-gradient(145deg,#283c63,#566c9f)}
+.tile:nth-child(5){background:linear-gradient(145deg,#7c426a,#d59bba)}
+.tile:nth-child(6){background:linear-gradient(145deg,#3a5b50,#a3b18a)}
+.tile:before{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(255,255,255,.22);border-radius:50%;top:-75px;right:-65px}
+.tile:after{content:"";position:absolute;width:150px;height:150px;border:1px solid rgba(255,255,255,.17);border-radius:50%;top:-35px;right:-35px}
+.tile-content{position:relative;z-index:1}
+.tile-kicker{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.8;margin-bottom:9px}
+.tile h3{font-size:22px;line-height:1.12;margin:0 0 8px;max-width:250px}
+.tile p{font-size:12px;line-height:1.5;margin:0;max-width:260px;color:rgba(255,255,255,.86)}
+.tile .big-icon{position:absolute;right:17px;top:15px;font-size:26px;opacity:.9;z-index:1}
+.details{padding:44px 0 10px}
+.section-title{font-size:18px;font-weight:650;margin:0 0 8px}
+.section-intro{font-size:13px;color:var(--muted);margin:0 0 22px;line-height:1.6}
+.timeline{border-left:1px solid #ded4e6;margin-left:7px;padding-left:23px}
+.job{position:relative;padding:0 0 24px}
+.job:before{content:"";position:absolute;left:-29px;top:4px;width:10px;height:10px;background:#c85b9d;border:3px solid #fff;outline:1px solid #c85b9d;border-radius:50%}
+.job-top{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.job h3{font-size:15px;margin:0 0 4px}
+.job .company{font-size:13px;color:#6f4384;font-weight:650}
+.job .date{font-size:12px;color:var(--muted)}
+.job p{font-size:13px;line-height:1.6;margin:8px 0 0;color:#4c4c4c}
+.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+.skill{font-size:12px;border:1px solid #e5d8eb;background:#fbf7fd;border-radius:20px;padding:8px 12px}
+.education{border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start}
+.edu-icon{width:42px;height:42px;border-radius:12px;background:#f6eafa;display:grid;place-items:center;font-size:21px;flex-shrink:0}
+.education h3{margin:0 0 5px;font-size:14px}
+.education p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+.contact-card{margin-top:35px;padding:28px;border-radius:16px;background:linear-gradient(120deg,#fff4f8,#f4efff);text-align:center}
+.contact-card h2{margin:0 0 8px;font-size:22px}
+.contact-card p{margin:0 auto 18px;max-width:520px;font-size:13px;line-height:1.6;color:#5e5864}
+.contact-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.contact-actions a{font-size:13px;font-weight:650;padding:10px 15px;border-radius:8px;background:#fff;border:1px solid #e2d9e7}
+.contact-actions a:first-child{background:var(--blue);color:#fff;border-color:var(--blue)}
+footer{padding:22px 15px 28px;text-align:center;color:#999;font-size:11px}
+@media(max-width:650px){.topbar{padding:0 16px;height:58px}.brand{font-size:24px}.toplinks{gap:11px}.toplinks .icon:nth-child(2){display:none}main{padding:27px 16px 30px}.profile{grid-template-columns:100px 1fr;gap:18px;align-items:start}.avatar-ring{width:95px;height:95px}.avatar{font-size:29px}.profile-head{gap:8px;margin-bottom:12px}.username{font-size:19px}.profile-actions{width:100%}.btn{padding:7px 10px}.stats{gap:16px;font-size:12px;margin-bottom:12px}.bio{font-size:12px}.badge{font-size:9px}.highlights{gap:15px}.highlight{min-width:70px}.highlight-circle{width:65px;height:65px}.tabs{gap:35px}.tile{min-height:0;padding:12px}.tile h3{font-size:16px}.tile p{font-size:10px}.tile-kicker{font-size:8px;letter-spacing:1px}.tile .big-icon{font-size:19px;right:9px;top:9px}.details{padding-top:32px}.job-top{display:block}.job .date{display:block;margin-top:5px}.contact-card{padding:23px 15px}}
+@media(min-width:900px){main{padding-left:9%;padding-right:9%}.tile{padding:25px}.tile h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Gurwinder Kaur home">insta<span>folio</span></a>
+    <nav class="toplinks" aria-label="Quick links">
+      <a class="icon" href="#top" aria-label="Home">⌂</a>
+      <a class="icon" href="#experience" aria-label="Experience">▧</a>
+      <a class="icon" href="#contact" aria-label="Contact">♡</a>
+      <a class="contact-btn" href="mailto:gurwinder.kaur1052@gmail.com">Connect</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="profile" aria-label="Profile">
+      <div class="avatar-wrap"><div class="avatar-ring"><div class="avatar">GK</div></div></div>
+      <div>
+        <div class="profile-head">
+          <div class="username">gurwinder.kaur</div>
+          <span class="badge">PRODUCT MANAGER</span>
+          <div class="profile-actions">
+            <a class="btn primary" href="https://www.linkedin.com/in/gurwinder-kaur-3a7136126" target="_blank" rel="noopener">View LinkedIn ↗</a>
+            <a class="btn" href="#contact">Message</a>
+          </div>
+        </div>
+        <div class="stats">
+          <span><strong>9+</strong> years experience</span>
+          <span><strong>3</strong> focus areas</span>
+          <span><strong>1</strong> user-first mindset</span>
+        </div>
+        <div class="bio">
+          <p class="name">Gurwinder Kaur</p>
+          <p class="role">Product Manager @ VLCC Healthcare</p>
+          <p>Certified Scrum Master · Product Management</p>
+          <p class="muted">Product strategy • Customer advocacy • Agile delivery</p>
+          <p><a class="link" href="mailto:gurwinder.kaur1052@gmail.com">gurwinder.kaur1052@gmail.com</a></p>
+          <p class="muted">📍 Gurugram, Haryana, India</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlights" aria-label="Profile highlights">
+      <a class="highlight" href="#experience"><div class="highlight-circle"><div class="highlight-inner">✦</div></div>Experience</a>
+      <a class="highlight" href="#skills"><div class="highlight-circle"><div class="highlight-inner">◎</div></div>Skills</a>
+      <a class="highlight" href="#education"><div class="highlight-circle"><div class="highlight-inner">⌂</div></div>Education</a>
+      <a class="highlight" href="#contact"><div class="highlight-circle"><div class="highlight-inner">♡</div></div>Contact</a>
+    </section>
+
+    <div class="tabs" aria-label="Page sections">
+      <a class="tab active" href="#highlights-grid">▦ <span>Highlights</span></a>
+      <a class="tab" href="#experience">▤ <span>Journey</span></a>
+      <a class="tab" href="#skills">♧ <span>Skills</span></a>
+    </div>
+
+    <section class="grid" id="highlights-grid" aria-label="Career highlights">
+      <article class="tile"><span class="big-icon">✦</span><div class="tile-content"><div class="tile-kicker">01 / Product</div><h3>From idea to impact</h3><p>Product lifecycle management, roadmap planning and backlog prioritization.</p></div></article>
+      <article class="tile"><span class="big-icon">↗</span><div class="tile-content"><div class="tile-kicker">02 / Customer</div><h3>Customer-first thinking</h3><p>Turning customer requirements and feedback into actionable product improvements.</p></div></article>
+      <article class="tile"><span class="big-icon">◉</span><div class="tile-content"><div class="tile-kicker">03 / Outcomes</div><h3>Measurable progress</h3><p>At Yatra Freight, product engagement increased by 45%.</p></div></article>
+      <article class="tile"><span class="big-icon">⌘</span><div class="tile-content"><div class="tile-kicker">04 / Optimization</div><h3>Better product journeys</h3><p>Improved online pricing availability by 60% and freight tracker success rates by 40%.</p></div></article>
+      <article class="tile"><span class="big-icon">◇</span><div class="tile-content"><div class="tile-kicker">05 / Delivery</div><h3>Agile collaboration</h3><p>Working across teams through sprint planning, Scrum meetings and clear requirements.</p></div></article>
+      <article class="tile"><span class="big-icon">＋</span><div class="tile-content"><div class="tile-kicker">06 / Foundation</div><h3>Quality at the core</h3><p>QA roots in mobile and web applications, regression testing and product stability.</p></div></article>
+    </section>
+
+    <section class="details" id="experience">
+      <h2 class="section-title">My journey</h2>
+      <p class="section-intro">A career built on quality, collaboration and a growing focus on product outcomes.</p>
+      <div class="timeline">
+        <article class="job">
+          <div class="job-top"><div><h3>Product Manager</h3><div class="company">VLCC Health Care Ltd.</div></div><div class="date">Nov 2024 – Apr 2026 · Gurgaon</div></div>
+          <p>Product management experience in healthcare, with a focus on product delivery and cross-functional collaboration.</p>
+        </article>
+        <article class="job">
+          <div class="job-top"><div><h3>Product Manager</h3><div class="company">Yatra Freight</div></div><div class="date">May 2021 – Sep 2024 · India</div></div>
+          <p>Partnered with corporate and enterprise customers, translated requirements into product work, managed bi-weekly sprints and led Scrum and sprint-planning meetings. Helped increase product engagement by 45%, online pricing availability by 60%, and freight tracker product success rates by 40%.</p>
+        </article>
+        <article class="job">
+          <div class="job-top"><div><h3>Software Engineer (QA)</h3><div class="company">Applify</div></div><div class="date">Apr 2019 – Feb 2020 · Mohali, Punjab</div></div>
+          <p>Supported Agile team collaboration, Scrum meetings and sprint planning; created and executed test cases for mobile and web applications.</p>
+        </article>
+        <article class="job">
+          <div class="job-top"><div><h3>Quality Analyst</h3><div class="company">Softuvo Solutions Private Limited</div></div><div class="date">Mar 2018 – Apr 2019 · Mohali, Punjab</div></div>
+          <p>Created and maintained mobile and web application test cases and performed regression and sanity testing.</p>
+        </article>
+        <article class="job">
+          <div class="job-top"><div><h3>Software Engineer (QA)</h3><div class="company">Mindful SAS Pvt Ltd</div></div><div class="date">May 2016 – May 2017</div></div>
+          <p>Managed test cases and performed regression testing to support application stability.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="details" id="skills">
+      <h2 class="section-title">What I bring to the table</h2>
+      <p class="section-intro">A mix of product thinking, structured delivery and quality-focused execution.</p>
+      <div class="skills">
+        <span class="skill">Product Lifecycle Management</span><span class="skill">Product Roadmap</span>
+        <span class="skill">Requirements Gathering & PRDs</span><span class="skill">Agile / Scrum / Kanban</span>
+        <span class="skill">Stakeholder Engagement</span><span class="skill">Client Management</span>
+        <span class="skill">Backlog Prioritization</span><span class="skill">Market Analysis</span>
+        <span class="skill">Data-Driven Decisions</span><span class="skill">Cross-Functional Collaboration</span>
+        <span class="skill">Quality Assurance & Testing</span><span class="skill">Jira</span>
+        <span class="skill">Asana</span><span class="skill">Trello</span><span class="skill">Figma</span><span class="skill">MS Office</span>
+      </div>
+    </section>
+
+    <section class="details" id="education">
+      <h2 class="section-title">Education & certification</h2>
+      <p class="section-intro">The foundations behind my technical and product journey.</p>
+      <div class="education"><div class="edu-icon">🎓</div><div><h3>Master of Computer Applications (MCA)</h3><p>Guru Nanak Dev University · Computer Science<br>2010–2015</p></div></div>
+      <div class="education" style="margin-top:10px"><div class="edu-icon">✓</div><div><h3>Becoming a Product Manager</h3><p>Certification listed in profile</p></div></div>
+    </section>
+
+    <section class="contact-card" id="contact">
+      <h2>Let’s build something meaningful.</h2>
+      <p>I’m interested in solving customer problems, collaborating with teams and delivering products that make a measurable difference.</p>
+      <div class="contact-actions">
+        <a href="mailto:gurwinder.kaur1052@gmail.com">✉ Email me</a>
+        <a href="https://www.linkedin.com/in/gurwinder-kaur-3a7136126" target="_blank" rel="noopener">in Connect on LinkedIn ↗</a>
+      </div>
+    </section>
+  </main>
+  <footer>MADE WITH PURPOSE · GURWINDER KAUR · PRODUCT MANAGEMENT</footer>
+</div>
+</body>
+</html>
